@@ -2,19 +2,20 @@ name: build-ios-app
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
+ 
 jobs:
   build:
     runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: rvm --version
-      - run: ruby --version
-      - run: gem --version
-      - run: bundle --version
-      - run: fastlane --version
-      - run: xcode-select -p
-      - run: mdfind "kMDItemCFBundleIdentifier = 'com.apple.dt.Xcode'"
-      #- run: fastlane beta
-      #  env:
-      #    MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+      steps:
+        - uses: actions/checkout@v2
+        - run: rvm --version
+        - run: ruby --version
+        - run: gem --version
+        - run: bundle --version
+        - run: fastlane --version
+        - run: xcode-select -p
+        - run: mdfind "kMDItemCFBundleIdentifier = 'com.apple.dt.Xcode'"
+        #- run: fastlane beta
+        #  env:
+        #    MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
