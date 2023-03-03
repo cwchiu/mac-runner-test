@@ -20,6 +20,9 @@ jobs:
       - run: bundle exec fastlane --version
       - run: xcode-select -p
       - run: mdfind "kMDItemCFBundleIdentifier = 'com.apple.dt.Xcode'"
+      - run: xcodebuild -version
+      - run: xcode-select -s /Applications/Xcode_13.4.1.app
+      - run: xcodebuild -version
       #- run: fastlane beta
       #  env:
       #    MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
