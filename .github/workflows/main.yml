@@ -5,7 +5,7 @@ on:
       - 'main'
  
 jobs:
-  build_001:
+  env_test:
     runs-on: macos-latest
     steps:
       #- uses: actions/checkout@v3
@@ -16,8 +16,6 @@ jobs:
       - run: ruby --version
       - run: gem --version
       - run: bundle --version
-      - run: bundle install
-      - run: bundle exec fastlane --version
       - run: xcode-select -p
       - run: mdfind "kMDItemCFBundleIdentifier = 'com.apple.dt.Xcode'"
       - run: xcodebuild -version
@@ -33,6 +31,8 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically      
       - run: cd Hello-World-iOS
+      - run: pwd
+      - run: ls -al
       - run: bundle install
       - run: bundle exec fastlane build_app
  
