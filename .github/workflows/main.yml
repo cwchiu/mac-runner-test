@@ -35,8 +35,8 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically      
       - name: 安裝依賴套件
         run: bundle install
-        working-directory: ./Hello-World-iOS
+        working-directory: ./flutter-sample-app-hello-world/ios
       - name: 打包 ipa
         run: bundle exec fastlane ipa_without_sign
-        working-directory: ./Hello-World-iOS
+        working-directory: ./flutter-sample-app-hello-world/ios
  
