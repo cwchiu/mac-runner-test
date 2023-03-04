@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'main'
- 
+
 jobs:
   env_test:
     runs-on: macos-latest
@@ -12,7 +12,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically      
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - run: ruby --version
       - run: gem --version
       - run: bundle --version
@@ -21,7 +21,7 @@ jobs:
       - run: xcodebuild -version
       - run: sudo xcode-select -s /Applications/Xcode_13.4.1.app
       - run: xcodebuild -version
- 
+
   build_002:
     runs-on: macos-latest
     env:
@@ -32,11 +32,11 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1' # Not needed with a .ruby-version file
-          bundler-cache: true # runs 'bundle install' and caches installed gems automatically      
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: 安裝依賴套件
         run: bundle install
-        working-directory: ./flutter-sample-app-hello-world/ios
+        working-directory: ./fexample02
       - name: 打包 ipa
         run: bundle exec fastlane ipa_without_sign
-        working-directory: ./flutter-sample-app-hello-world/ios
- 
+        working-directory: ./fexample02
+
