@@ -26,6 +26,10 @@ jobs:
     runs-on: macos-latest
     env:
       SWIFT_VERSION: "5.0"
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./example02
     steps:
       - uses: actions/checkout@v3
       - name: 設定 ruby 環境
@@ -35,8 +39,6 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: 安裝依賴套件
         run: bundle install
-        working-directory: ./fexample02
       - name: 打包 ipa
         run: bundle exec fastlane ipa_without_sign
-        working-directory: ./fexample02
 
