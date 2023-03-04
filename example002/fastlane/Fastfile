@@ -22,6 +22,6 @@ platform :ios do
   end
 
   lane :ipa_without_sign do
-    build_app(skip_codesigning: true)
+    build_app(skip_codesigning: true, export_team_id: "xxxxxxx")
   end
 end
