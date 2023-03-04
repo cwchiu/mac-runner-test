@@ -26,6 +26,8 @@ jobs:
     runs-on: macos-latest
     env:
       SWIFT_VERSION: "5.0"
+      MATCH_TEAM_ID: "xxxxxxx"
+      MATCH_APP_ID: "com.chuiwenchiu.Hello"
     defaults:
       run:
         shell: bash
@@ -37,8 +39,9 @@ jobs:
         with:
           ruby-version: '3.1' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: 安裝依賴套件
-        run: bundle install
+          working-directory: ./example002
+      #- name: 安裝依賴套件
+      #  run: bundle install
       - name: 打包 ipa
         run: bundle exec fastlane ipa_without_sign
 
