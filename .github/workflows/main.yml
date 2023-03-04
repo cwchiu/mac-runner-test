@@ -43,5 +43,5 @@ jobs:
       #- name: 安裝依賴套件
       #  run: bundle install
       - name: 打包 ipa
-        run: bundle exec fastlane ipa_without_sign
+        run: bundle exec fastlane  tests
 
